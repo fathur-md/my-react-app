@@ -13,7 +13,7 @@ export const MainLayout = () => {
           key={location.pathname}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
+          exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="flex-1 flex"
         >
