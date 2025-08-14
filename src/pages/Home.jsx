@@ -1,0 +1,9 @@
+export const Home = () => {
+  return (
+    <div className="pt-12 flex">
+      <div className="p-4 container mx-auto flex items-center justify-center w-full">
+        <h1 className="text-5xl">Home page</h1>
+      </div>
+    </div>
+  );
+};
