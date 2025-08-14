@@ -9,7 +9,7 @@ function App() {
     <Router basename="/my-react-app">
       <Routes>
         <Route element={<MainLayout />}>
-          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
