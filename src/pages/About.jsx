@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <div className="flex w-full pt-12">
+    <div className="flex w-full pt-16">
       <div className="mx-auto flex w-full max-w-5xl flex-col p-4">
         <h1 className="text-5xl">About pages</h1>
         <br />
