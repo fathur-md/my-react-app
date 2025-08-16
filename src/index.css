@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: rgb(248, 248, 252);
+  --color-primary-dark: rgb(56, 56, 61);
+}
+
 @layer base {
   html,
   body {
     @apply bg-gray-50 text-gray-900 dark:bg-[#1c1c1e] dark:text-gray-300;
+  }
+  button {
+    @apply cursor-pointer transition focus:outline-none;
   }
 }
 
