@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import IdovDesktop from "../assets/idovDesktop.png";
 import IdovMobile from "../assets/idovMobile.png";
 export const ProjectCard = () => {
@@ -30,25 +30,30 @@ export const ProjectCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-2 px-2 lg:gap-4 lg:p-4">
+    <motion.div
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: "spring", duration: 2 }}
+      className="grid grid-cols-1 gap-2 px-2 lg:gap-4 lg:p-4"
+    >
       {projects.map((p, i) => (
         <div className="overflow-hidden rounded-md">
           <h1 className="py-10 text-3xl font-light lg:text-5xl">{p.title}</h1>
           <br />
-          <div className="flex flex-wrap items-center justify-center gap-4 p-4">
+          <div className="flex items-center gap-4 p-4">
             <img
               src={p.image?.mobile}
               alt={p.title}
-              className="mx-auto w-full max-w-xs rounded-4xl border-4 border-gray-400 object-cover"
+              className="pointer-events-none relative z-10 mx-auto w-full max-w-xs rounded-4xl border-4 border-gray-400 object-cover select-none"
             />
             <img
               src={p.image?.desktop}
               alt={p.title}
-              className="h-full max-w-4xl rounded-lg max-xl:mt-12"
+              className="pointer-events-none h-auto w-full max-w-7xl rounded-lg select-none max-xl:mt-12"
             />
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };

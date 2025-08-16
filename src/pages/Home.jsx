@@ -8,9 +8,9 @@ export const Home = () => {
     projectRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className="relative flex min-h-dvh w-full flex-col items-center justify-start overflow-hidden bg-white pt-12 dark:bg-zinc-900">
+    <div className="relative flex min-h-dvh w-full flex-col items-center justify-start overflow-hidden bg-white dark:bg-zinc-900">
       {/* HERO */}
-      <section className="relative z-10 w-full px-6 py-20 text-center">
+      <section className="relative z-10 mt-12 w-full px-6 py-20 text-center">
         <h1 className="text-5xl font-medium tracking-tight md:text-7xl">
           Hi, I'm Fathur.
         </h1>
