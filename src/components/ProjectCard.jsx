@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import IdovDesktop from "../assets/idovDesktop.png";
 import IdovMobile from "../assets/idovMobile.png";
-import { Link, Link2 } from "lucide-react";
+import { Link2 } from "lucide-react";
+import iosApp from "../assets/iosApp.png";
 export const ProjectCard = () => {
   const projects = [
     {
@@ -15,7 +16,39 @@ export const ProjectCard = () => {
       link: "https://idov-site.web.app",
     },
     {
-      title: "Test",
+      title: "Medium Clone – Blogging Platform with Sanity CMS",
+      description:
+        "A full-stack Medium-style blogging platform with a custom Sanity CMS admin dashboard. Features dynamic content management, rich text editor, and responsive design for seamless reading and publishing.",
+
+      image:
+        "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
+      link: "",
+    },
+    {
+      title: "",
+      description: "",
+
+      image: iosApp,
+      bg: "bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-800",
+      link: "",
+    },
+    {
+      title: "Medium Clone – Blogging Platform with Sanity CMS",
+      description: "",
+
+      image:
+        "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
+      bg: "bg-gray-700",
+      link: "",
+    },
+    {
+      title: "Medium Clone – Blogging Platform with Sanity CMS",
+      description: "",
+
+      image:
+        "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
+      bg: "bg-slate-800",
+      link: "",
     },
   ];
 
@@ -24,13 +57,18 @@ export const ProjectCard = () => {
       initial={{ scale: 0.5, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: "spring", duration: 2 }}
-      className="grid grid-cols-1 place-content-center gap-2 lg:gap-4 lg:p-4"
+      className="grid grid-cols-1 place-content-center md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
     >
       {projects.map((p, i) =>
         i === 0 ? (
-          <div key={i} className="overflow-hidden rounded-md px-2">
+          <div
+            key={i}
+            className="overflow-hidden rounded-md px-2 md:col-span-2 lg:col-span-3 2xl:col-span-4"
+          >
             <h1 className="py-4 text-3xl font-light lg:text-5xl">{p.title}</h1>
-            <p>{p.description}</p>
+            <p className="mx-auto max-w-3xl px-2 text-base font-extralight">
+              {p.description}
+            </p>
             <br />
             <a
               href={p.link}
@@ -45,31 +83,37 @@ export const ProjectCard = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mt-8 flex items-center justify-center gap-4 overflow-x-scroll p-4"
+              className="mt-5 flex items-center justify-center gap-4 overflow-x-scroll p-4 2xl:gap-10"
             >
               <img
                 src={p.image?.mobile}
                 alt={p.title}
-                className="pointer-events-none relative z-10 mx-auto block w-full max-w-xs rounded-4xl border-4 border-gray-400 object-cover select-none md:hidden"
+                className="pointer-events-none relative z-10 block w-full max-w-xs rounded-4xl border-4 border-gray-400 object-cover select-none md:hidden 2xl:block"
               />
               <img
                 src={p.image?.desktop}
                 alt={p.title}
-                className="pointer-events-none container hidden h-auto w-full rounded-xl select-none md:block"
+                className="pointer-events-none container hidden h-auto w-full max-w-5xl rounded-xl select-none md:block"
               />
             </motion.div>
             {/* Animate this */}
-            <div className="px-4 pt-12 pb-5">
-              <h1 className="mx-auto mt-2 max-w-3xl text-2xl leading-normal tracking-tight text-gray-600 md:text-5xl">
+            <div className="px-4 pt-30 pb-10">
+              <h1 className="mx-auto mt-2 max-w-3xl text-2xl leading-tight tracking-tight text-gray-500 md:text-3xl lg:text-4xl">
                 A selection of projects showcasing my skills in web development,
                 design, and interactive UI.
               </h1>
             </div>
           </div>
         ) : (
-          <div key={i} className="">
-            <div>
-              <h1>{p.title}</h1>
+          <div key={i} className={`${p.bg ?? "bg-amber-200"}`}>
+            <div className="h-96 p-4">
+              <div className="flex h-full w-full items-center overflow-hidden">
+                <img
+                  src={p.image}
+                  alt=""
+                  className="w-full rounded-lg object-cover"
+                />
+              </div>
             </div>
           </div>
         ),

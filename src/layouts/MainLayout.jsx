@@ -1,7 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-// import { Navbar } from "../components/Navbar";
 import { Navbar } from "../components/Navbar/Navbar";
-import { AnimationsLayout } from "./AnimationsLayout";
 import { AnimatePresence } from "framer-motion";
 
 export const MainLayout = () => {
@@ -12,9 +10,9 @@ export const MainLayout = () => {
       {/* <Navbar /> */}
       <Navbar />
       <AnimatePresence mode="wait">
-        <AnimationsLayout key={location.key}>
+        <main key={location.key}>
           <Outlet />
-        </AnimationsLayout>
+        </main>
       </AnimatePresence>
     </div>
   );
