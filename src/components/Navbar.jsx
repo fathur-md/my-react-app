@@ -20,12 +20,12 @@ export const Navbar = () => {
     setIsOpen(false);
   };
   return (
-    <nav className="fixed inset-x-0 top-0 z-40 flex">
-      <div className="flex h-12 w-full bg-white/60 shadow-sm backdrop-blur-3xl dark:bg-zinc-800/60">
+    <nav className="fixed inset-x-0 top-0 z-30 flex">
+      <div className="flex h-12 w-full bg-[rgba(248,248,252,0.4)] shadow-sm backdrop-blur-[14px] dark:bg-[rgba(56,56,61,0.5)]">
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-0.5">
             <Frame />
-            <h1 className="gradient-animated gradient-x text-xl font-light">
+            <h1 className="text-xl font-medium">
               Fathur. <span className="text-base font-semibold">DEV</span>
             </h1>
           </Link>
@@ -50,6 +50,7 @@ export const Navbar = () => {
           {isOpen && (
             <Dialog
               as={motion.div}
+              static
               initial="closed"
               animate="open"
               exit="closed"
@@ -57,14 +58,15 @@ export const Navbar = () => {
               open={isOpen}
               onClose={setIsOpen}
             >
-              <motion.div
-                variants={{
-                  closed: { opacity: 0 },
-                  open: { opacity: 1 },
-                }}
-                className="fixed inset-0 z-50 pt-14"
-              >
-                <div className="flex min-h-full sm:mx-auto sm:max-w-5xl sm:justify-end sm:px-4">
+              <div className="sm:px4 fixed inset-0 z-50 pt-14 sm:px-4">
+                {/* Backdrop */}
+                <motion.div
+                  variants={{
+                    closed: { opacity: 0 },
+                    open: { opacity: 1 },
+                  }}
+                  className="h-full w-full rounded-t-3xl border-t border-gray-500/20 backdrop-blur-2xl sm:float-right sm:h-fit sm:max-w-xs sm:rounded-lg sm:border sm:bg-none sm:shadow-sm sm:backdrop-blur-none dark:border-gray-200/10"
+                >
                   <DialogPanel
                     as={motion.div}
                     variants={{
@@ -79,12 +81,12 @@ export const Navbar = () => {
                         y: "var(--y-to, 0px)",
                       },
                     }}
-                    className="w-full rounded-t-3xl border border-gray-500/20 bg-white [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:h-fit sm:max-w-xs sm:origin-top-right sm:rounded-lg sm:border-0 sm:shadow-sm sm:[--scale-from:80%] sm:[--scale-to:100%] dark:border-gray-200/10 dark:bg-zinc-900"
+                    className="h-full origin-top-right rounded-lg [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:bg-white sm:[--scale-from:80%] sm:[--scale-to:100%] sm:dark:bg-zinc-900"
                   >
                     <div className="flex flex-col p-4">
                       <button
                         onClick={toggleIsOpen}
-                        className="ml-auto flex size-8 cursor-pointer items-center justify-center rounded-lg hover:bg-gray-200 sm:hidden"
+                        className="ml-auto flex size-8 cursor-pointer items-center justify-center rounded-lg hover:bg-gray-200 sm:hidden dark:hover:bg-zinc-800"
                       >
                         <X className="size-6" />
                       </button>
@@ -94,7 +96,7 @@ export const Navbar = () => {
                             key={link.to}
                             to={link.to}
                             onClick={handleLinkClick}
-                            className="max-w-sm rounded-lg px-4 py-2 hover:bg-gray-200"
+                            className="w-full max-w-sm rounded-lg px-4 py-2 hover:bg-gray-200 dark:hover:bg-zinc-800"
                           >
                             {link.label}
                           </Link>
@@ -102,8 +104,8 @@ export const Navbar = () => {
                       </div>
                     </div>
                   </DialogPanel>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </Dialog>
           )}
         </AnimatePresence>

@@ -6,7 +6,7 @@ export const AnimationsLayout = ({ children }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", duration: 1 }}
-      className="flex flex-1"
+      className="flex"
     >
       {children}
     </motion.div>

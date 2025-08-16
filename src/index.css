@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-100 text-gray-900 dark:bg-zinc-950 dark:text-gray-300;
+    @apply bg-gray-50 text-gray-900 dark:bg-[#1c1c1e] dark:text-gray-300;
   }
 }
 
