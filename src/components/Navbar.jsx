@@ -21,7 +21,7 @@ export const Navbar = () => {
   };
   return (
     <nav className="fixed inset-x-0 top-0 z-30 flex">
-      <div className="flex h-12 w-full bg-[rgba(248,248,252,0.4)] shadow-sm backdrop-blur-[14px] dark:bg-[rgba(56,56,61,0.5)]">
+      <div className="flex h-12 w-full bg-[rgba(248,248,252,0.4)] backdrop-blur-[14px] dark:bg-[rgba(56,56,61,0.5)]">
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-0.5">
             <Frame />
