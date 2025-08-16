@@ -54,18 +54,18 @@ export const Navbar = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="relative"
+              className="relative flex justify-center"
               open={isOpen}
               onClose={setIsOpen}
             >
-              <div className="sm:px4 fixed inset-0 z-50 pt-14 sm:px-4">
+              <div className="sm:px4 fixed inset-0 z-50 mx-auto max-w-5xl pt-14 sm:px-4">
                 {/* Backdrop */}
                 <motion.div
                   variants={{
                     closed: { opacity: 0 },
                     open: { opacity: 1 },
                   }}
-                  className="h-full w-full rounded-t-3xl border-t border-gray-500/20 backdrop-blur-2xl sm:float-right sm:h-fit sm:max-w-xs sm:rounded-lg sm:border sm:bg-none sm:shadow-sm sm:backdrop-blur-none dark:border-gray-200/10"
+                  className="h-full w-full backdrop-blur-2xl sm:float-right sm:h-fit sm:max-w-xs sm:rounded-lg sm:bg-none sm:backdrop-blur-none dark:border-gray-200/10"
                 >
                   <DialogPanel
                     as={motion.div}
@@ -81,7 +81,7 @@ export const Navbar = () => {
                         y: "var(--y-to, 0px)",
                       },
                     }}
-                    className="h-full origin-top-right rounded-lg [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:bg-white sm:[--scale-from:80%] sm:[--scale-to:100%] sm:dark:bg-zinc-900"
+                    className="h-full origin-top-right rounded-lg rounded-t-3xl border-t border-gray-500/20 [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:rounded-lg sm:border sm:bg-white sm:shadow-sm sm:[--scale-from:80%] sm:[--scale-to:100%] sm:dark:bg-zinc-900"
                   >
                     <div className="flex flex-col p-4">
                       <button
