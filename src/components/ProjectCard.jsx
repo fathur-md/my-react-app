@@ -18,37 +18,20 @@ export const ProjectCard = () => {
     {
       title: "Medium Clone – Blogging Platform with Sanity CMS",
       description:
-        "A full-stack Medium-style blogging platform with a custom Sanity CMS admin dashboard. Features dynamic content management, rich text editor, and responsive design for seamless reading and publishing.",
-
+        "A showcase demo of a Medium-style blogging platform with a custom Sanity CMS admin dashboard. While some features are incomplete and not fully functional, the project highlights dynamic content management, a rich text editor, and responsive design.",
       image:
         "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
-      link: "",
+      bg: "bg-amber-200",
+      link: "https://medium-demo-proj.vercel.app",
     },
     {
-      title: "",
-      description: "",
-
-      image: iosApp,
-      bg: "bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-800",
-      link: "",
-    },
-    {
-      title: "Medium Clone – Blogging Platform with Sanity CMS",
-      description: "",
-
+      title: "iOS App",
+      description:
+        "A demo iOS news application that fetches and displays the latest news using an external API.",
       image:
-        "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
-      bg: "bg-gray-700",
-      link: "",
-    },
-    {
-      title: "Medium Clone – Blogging Platform with Sanity CMS",
-      description: "",
-
-      image:
-        "https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png",
-      bg: "bg-slate-800",
-      link: "",
+        "https://1000logos.net/wp-content/uploads/2017/02/Apple-Logosu.png",
+      bg: "bg-white",
+      link: "https://github.com/fathur-m/ios-app.git",
     },
   ];
 
@@ -78,7 +61,7 @@ export const ProjectCard = () => {
               <Link2 className="size-6" />
               Open Demo
             </a>
-            {/* Animate this */}
+
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,8 +79,8 @@ export const ProjectCard = () => {
                 className="pointer-events-none container hidden h-auto w-full max-w-5xl rounded-xl select-none md:block"
               />
             </motion.div>
-            {/* Animate this */}
-            <div className="px-4 pt-30 pb-10">
+
+            <div className="px-4 py-30">
               <h1 className="mx-auto mt-2 max-w-3xl text-2xl leading-tight tracking-tight text-gray-500 md:text-3xl lg:text-4xl">
                 A selection of projects showcasing my skills in web development,
                 design, and interactive UI.
@@ -105,14 +88,30 @@ export const ProjectCard = () => {
             </div>
           </div>
         ) : (
-          <div key={i} className={`${p.bg ?? "bg-amber-200"}`}>
+          <div
+            key={i}
+            className={`${p.bg ?? "bg-primary dark:bg-primary-dark"} group relative overflow-hidden`}
+          >
             <div className="h-96 p-4">
               <div className="flex h-full w-full items-center overflow-hidden">
                 <img
                   src={p.image}
-                  alt=""
-                  className="w-full rounded-lg object-cover"
+                  alt={p.title}
+                  className="h-full w-full object-contain transition-transform group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 p-4 text-center opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <h3 className="text-2xl font-bold text-white">{p.title}</h3>
+                  <p className="mt-2 text-lg text-gray-200">{p.description}</p>
+                  <span className="mt-4 inline-block rounded-lg bg-white/90 px-4 py-2 text-sm font-semibold text-black hover:bg-white">
+                    View Project →
+                  </span>
+                </a>
               </div>
             </div>
           </div>
