@@ -51,8 +51,8 @@ const HighlightedProject = ({ projects }) => {
 
         <div className="relative mx-auto mt-8 max-w-sm rounded-lg bg-gray-200 p-4 pl-8 text-left text-gray-600 dark:bg-gray-900 dark:text-gray-400">
           <span className="absolute top-1/2 left-3 h-[80%] w-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-800"></span>
-          <p className="text-xl font-semibold">Note</p>
-          <p className="mt-2 text-base">
+          <p className="text-base font-semibold">Note</p>
+          <p className="mt-2 text-sm">
             features in this project are incomplete, as I have stopped
             maintaining it.
           </p>
@@ -61,17 +61,17 @@ const HighlightedProject = ({ projects }) => {
         <br />
       </div>
       {/* Image */}
-      <div className="container mx-auto flex items-center justify-center gap-6 overflow-hidden p-4">
+      <div className="container mx-auto flex items-center justify-center overflow-hidden p-4">
         <img
           src={projects.image.mobile}
           alt={projects.title}
           className="max-w-2xs rounded-4xl border-4 border-gray-400 md:max-w-sm lg:max-w-2xs"
         />
-        <div className="hidden lg:block">
+        <div className="hidden p-4 perspective-normal lg:block">
           <img
             src={projects.image.desktop}
             alt={projects.title}
-            className="w-full max-w-5xl rounded-4xl"
+            className="-ml-8 w-full max-w-5xl -rotate-y-10 transform rounded-4xl border-4 border-gray-400"
           />
         </div>
       </div>
