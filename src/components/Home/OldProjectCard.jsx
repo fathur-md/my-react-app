@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import IdovDesktop from "../assets/idovDesktop.png";
-import IdovMobile from "../assets/idovMobile.png";
 import { Link2 } from "lucide-react";
-import iosApp from "../assets/iosApp.png";
+import idovDesktop from "@/assets/IdovDesktop.png";
+import idovMobile from "@/assets/IdovMobile.png";
+
 export const ProjectCard = () => {
   const projects = [
     {
@@ -10,8 +10,8 @@ export const ProjectCard = () => {
       description:
         "Explore a demo movie and TV trailer platform designed like Netflix. Built as a portfolio project with React and IMDb API. Only trailers, not full films",
       image: {
-        desktop: IdovDesktop,
-        mobile: IdovMobile,
+        desktop: idovDesktop,
+        mobile: idovMobile,
       },
       link: "https://idov-site.web.app",
     },
@@ -82,8 +82,8 @@ export const ProjectCard = () => {
 
             <div className="px-4 py-30">
               <h1 className="mx-auto mt-2 max-w-3xl text-2xl leading-tight tracking-tight text-gray-500 md:text-3xl lg:text-4xl">
-                A selection of projects showcasing my skills in web development,
-                design, and interactive UI.
+                Thoughtfully designed projects that combine clean interfaces,
+                seamless interactions, and modern web technologies.
               </h1>
             </div>
           </div>

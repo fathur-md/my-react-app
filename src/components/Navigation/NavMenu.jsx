@@ -45,7 +45,7 @@ export const NavMenu = ({ isOpen, onClose, links }) => {
                 <DialogPanel
                   as={motion.div}
                   variants={panelVariants}
-                  className="h-full w-full origin-top-right rounded-t-3xl border-t border-gray-500/20 [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:float-right sm:max-w-xs sm:rounded-lg sm:border sm:bg-white sm:shadow-sm sm:[--scale-from:80%] sm:[--scale-to:100%] sm:dark:bg-zinc-900"
+                  className="bg-primary/80 dark:bg-primary-dark/80 h-full w-full origin-top-right rounded-t-3xl border-t border-gray-500/20 [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:50px] max-sm:[--y-to:0px] sm:float-right sm:max-w-xs sm:rounded-lg sm:border sm:bg-white sm:shadow-sm sm:[--scale-from:80%] sm:[--scale-to:100%] sm:dark:bg-zinc-900"
                 >
                   <div className="flex flex-col p-4">
                     <button

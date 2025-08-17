@@ -1,42 +1,17 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: rgb(248, 248, 252);
-  --color-primary-dark: rgb(56, 56, 61);
-}
+/*👉@theme {
+  --color-primary-dark: #1c1c1e;
+  --color-secondary-dark: #2c2c2e;
+  --color-ternary-dark: #3a3a3c;
+}👈*/
 
 @layer base {
   html,
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-[#1c1c1e] dark:text-gray-300;
+    @apply bg-gray-50 text-gray-900 dark:bg-black dark:text-gray-300;
   }
   button {
     @apply cursor-pointer transition focus:outline-none;
-  }
-}
-
-@layer utilities {
-  /* Moving gradient animation */
-  .gradient-animated {
-    background-image: linear-gradient(90deg, #7e22ce, #ec4899, #f87171);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .gradient-x {
-    animation: gradient-x 3s linear infinite;
-  }
-
-  @keyframes gradient-x {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
   }
 }

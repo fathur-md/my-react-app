@@ -1,7 +1,7 @@
 import { Frame, Grip } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavMenu } from "./NavMenu";
+import { NavMenu } from "@/components/Navigation/NavMenu";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-30 flex">
-      <div className="bg-primary/80 dark:bg-primary-dark/50 flex h-12 w-full backdrop-blur-[14px]">
+      <div className="flex h-12 w-full bg-gray-50/80 backdrop-blur-[14px] dark:bg-zinc-800/70">
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4">
           <Link
             onClick={() => window.scrollTo({ top: 0 })}

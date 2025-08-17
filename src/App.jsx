@@ -1,8 +1,8 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { MainLayout } from "./layouts/MainLayout";
-import { Project } from "./pages/Project";
+import { Home } from "@/pages/Home";
+import { About } from "@/pages/About";
+import { Project } from "@/pages/Project";
+import { MainLayout } from "@/layouts/MainLayout.jsx";
 
 function App() {
   return (
